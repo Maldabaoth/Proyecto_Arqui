@@ -1,12 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "root"; // Usuario por defecto en MySQL local
-$password = ""; // Contraseña por defecto en MySQL local
-$dbname = "freedom_database"; // Nombre de la base de datos creada
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+session_start();
+$DB_HOST=$_ENV["DB_HOST"];
+$DB_USER=$_ENV["DB_USER"];
+$DB_PASSWORD=$_ENV["DB_PASSWORD"];
+$DB_NAME=$_ENV["DB_NAME"];
+$DB_PORT=$_ENV["DB_PORT"];
+$db=mysqli_connect("DB_HOST","DB_USER","DB_PASSWORD","DB_NAME","DB_PORT");
 ?>
